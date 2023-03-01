@@ -1,2 +1,2 @@
 # django3
-Third iteration of Django
+Third iteration of working on a Django Project
