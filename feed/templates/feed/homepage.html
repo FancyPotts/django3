@@ -9,8 +9,29 @@
 
 {% block body %}
     {%for post in posts%}
-        {{ post.text }} written {{ post.date }}
-        <hr>
+        <!-- post component -->
+<div class='flex items-center justify-center p-3'>  
+    <div class="rounded-xl border p-5 shadow-md w-9/12 bg-white">
+    <div class="flex w-full items-center justify-between border-b pb-3">
+      <div class="flex items-center space-x-3">
+        <!-- TODO add user name and profile picture -->
+        <div class="h-8 w-8 rounded-full bg-slate-400 bg-[url('https://i.pravatar.cc/32')]"></div>
+        <div class="text-lg font-bold text-slate-700">Joe Smith</div>
+      </div>
+      <div class="flex items-center space-x-8">
+        <button class="rounded-2xl border bg-neutral-100 px-3 py-1 text-xs font-semibold">Category</button>
+        <div class="text-xs text-neutral-500">{{ post.date }}</div>
+      </div>
+    </div>
+
+    <div class="mt-4 mb-6">
+      <div class="mb-3 text-xl font-bold">{{ post.text }}</div>
+      <!-- TODO post body text -->
+        <div class="text-sm text-neutral-600">Aliquam a tristique sapien, nec bibendum urna. Maecenas convallis dignissim turpis, non suscipit mauris interdum at. Morbi sed gravida nisl, a pharetra nulla. Etiam tincidunt turpis leo, ut mollis ipsum consectetur quis. Etiam faucibus est risus, ac condimentum mauris consequat nec. Curabitur eget feugiat massa</div> 
+       
+    </div>
+  </div>
+</div>
     {%endfor%}
 {% endblock body %}
     

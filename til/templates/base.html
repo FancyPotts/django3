@@ -33,7 +33,7 @@ body {
 }
 
 </style>
-
+<!-- Navbar -->
 <nav class="flex items-center bg-gray-800 p-3 flex-wrap">
       <a href="/" class="p-2 mr-4 inline-flex items-center">
 
@@ -74,24 +74,7 @@ body {
             <span>Login</span>
           </a>
           {% endif %}
-          <a
-            href="#"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
-          >
-            <span>Gallery</span>
-          </a>
-          <a
-            href="#"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
-          >
-            <span>Products</span>
-          </a>
-          <a
-            href="#"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
-          >
-            <span>Contact Us</span>
-          </a>
+          
         </div>
       </div>
     </nav>
@@ -110,16 +93,10 @@ body {
 });
 
 </script>
+<!-- End navbar -->
+<!-- Body -->
 <div class="p-16">
 
-    
-    {% if request.user.is_authenticated %}
-    <a href="{% url 'account_logout' %}">Log out</a>
-    {% else %}
-    <a href="{% url 'account_login' %}">Log in</a>
-    {% endif %}
-    <br>
-    This is default base!
     <br>
     {% block body %}
     Default base file
@@ -127,5 +104,6 @@ body {
     
     
 </div>
+<!-- End body -->
 </body>
 </html>
