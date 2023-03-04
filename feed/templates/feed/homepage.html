@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load thumbnail %}
 
 {% block title %}
     Home page
@@ -15,8 +15,10 @@
     <div class="flex w-full items-center justify-between border-b pb-3">
       <div class="flex items-center space-x-3">
         <!-- TODO add user name and profile picture -->
-        <div class="h-8 w-8 rounded-full bg-slate-400 bg-[url('https://i.pravatar.cc/32')]"></div>
-        <div class="text-lg font-bold text-slate-700">Joe Smith</div>
+        {% thumbnail post.author.profile.image "372x372" crop="center" as im %}
+        <img class='h-8 w-8 rounded-full bg-slate-400' src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="avatar">
+        {% endthumbnail %}
+        <div class="text-lg font-bold text-slate-700">{{ post.author.username }}</div>
       </div>
       <div class="flex items-center space-x-8">
         <button class="rounded-2xl border bg-neutral-100 px-3 py-1 text-xs font-semibold">Category</button>
