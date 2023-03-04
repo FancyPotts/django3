@@ -14,7 +14,6 @@
     <div class="rounded-xl border p-5 shadow-md w-9/12 bg-white">
     <div class="flex w-full items-center justify-between border-b pb-3">
       <div class="flex items-center space-x-3">
-        <!-- TODO add user name and profile picture -->
         {% thumbnail post.author.profile.image "372x372" crop="center" as im %}
         <img class='h-8 w-8 rounded-full bg-slate-400' src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="avatar">
         {% endthumbnail %}
@@ -29,7 +28,7 @@
     <div class="mt-4 mb-6">
       <div class="mb-3 text-xl font-bold">{{ post.text }}</div>
       <!-- TODO post body text -->
-        <div class="text-sm text-neutral-600">Aliquam a tristique sapien, nec bibendum urna. Maecenas convallis dignissim turpis, non suscipit mauris interdum at. Morbi sed gravida nisl, a pharetra nulla. Etiam tincidunt turpis leo, ut mollis ipsum consectetur quis. Etiam faucibus est risus, ac condimentum mauris consequat nec. Curabitur eget feugiat massa</div> 
+        <a class="text-sm text-neutral-600" href="{% url 'feed:detail' post.id %}">Read more</div> 
        
     </div>
   </div>
