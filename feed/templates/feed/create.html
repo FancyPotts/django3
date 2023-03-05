@@ -1,13 +1,16 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 
-
-{% block title %}
-    Create a new post
-{% endblock title %}
+{% block title %} Create a new post {% endblock title %}
 
 
 {% block body %}
-    {{ form.as_p }}
+        <div class="p-16">
+            <form method="POST" action=".">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="bg-transparent hover:bg-gray-800 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-800 hover:border-transparent rounded text-right" type="submit">
+                    Post
+                </button>
+            </form>
+        </div>
 {% endblock body %}
-    
-    
