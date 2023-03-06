@@ -67,7 +67,7 @@
           <li>
 
             <a
-            href="{% url 'feed:new_post' %}"
+            href="#"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white show-modal"
             >
             <span>Create new post</span>
@@ -108,15 +108,15 @@
       </div>
       <!-- modal body -->
       <div class="p-3">
-        <!-- TODO Add the AJAX form -->
+          <textarea class="border-2 border-grey-700 my-4 js-post-text w-full" Placeholder="Enter your post" maxlength="240" rows="3"></textarea>
       </div>
       <div class="flex justify-end items-center w-100 border-t p-3">
-        <button class="bg-gray-700 hover:bg-gray-900 px-3 py-1 rounded mr-1.5 text-white">Post</button>
+        <button class="bg-gray-700 hover:bg-gray-900 px-3 py-1 rounded mr-1.5 text-white js-submit">Post</button>
         <button class="bg-red-700 hover:bg-red-900 px-3 py-1 rounded text-white close-modal">Cancel</button>
       </div>
     </div>
   </div>
-  
+  <!-- TODO: Modify JS to submit post via modal. -->
   <script>
     const modal = document.querySelector('.modal');
 
@@ -131,18 +131,18 @@
       close.addEventListener('click', function (){
         modal.classList.add('hidden')
       });
+
+      postModal.addEventListener('click', function (){
+        console.log("Submitted?")
+      })
     });
   </script>
 <!-- Modal End -->
 {% endif %}
 
+
 <script src="{% static 'js/main.js' %}"></script>
   
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
-      integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
-      crossorigin="anonymous"
-    ></script>
     <script>
       $(document).ready(function () {
         $(".nav-toggler").each(function (_, navToggler) {
